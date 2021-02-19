@@ -1,48 +1,51 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useIntl } from "gatsby-plugin-intl";
+
 import Title from "../globals/Title";
 import Categories from "../categories/Categories";
 import MenuItems from "../menuItem/MenuItems";
 
-const getCategories = (items) => {
-  let tempItems = items.map((items) => {
-    return items.node.category;
-  });
-  let tempCategories = new Set(tempItems); //single instance of categories
-  let categories = Array.from(tempCategories);
-  categories = ["all", ...categories]; //add 'all' category
-  return categories;
-};
+const Menu = ({ items }) => {
+  const intl = useIntl();
 
-export default class Menu extends Component {
-  state = {
-    items: this.props.items.edges, //query
-    coffeeItems: this.props.items.edges, //render
-    categories: getCategories(this.props.items.edges),
+  const [coffeeItems, setCoffeeItems] = useState(items.edges);
+
+  const getCategories = (items) => {
+    let tempItems = items.map((items) => {
+      return items.node.category;
+    });
+    let tempCategories = new Set(tempItems); //single instance of categories
+    let categories = Array.from(tempCategories);
+    categories = ["all", ...categories]; //add 'all' category
+    return categories;
   };
 
-  handleItems = (category) => {
-    let tempItems = [...this.state.items];
+  const handleItems = (category) => {
+    let tempItems = [...items.edges];
     if (category === "all") {
-      this.setState({
-        coffeeItems: tempItems,
-      });
+      setCoffeeItems(tempItems);
     } else {
       let items = tempItems.filter(({ node }) => node.category === category);
-      this.setState({
-        coffeeItems: items,
-      });
+      setCoffeeItems(items);
     }
   };
-  render() {
-    const { categories, items, coffeeItems } = this.state;
-    return (
-      <section className="menu py-5">
-        <div className="container">
-          <Title title="Our Menu" />
-          <Categories categories={categories} handleItems={this.handleItems} />
-        </div>
-        <MenuItems items={items} coffeeItems={coffeeItems} />
-      </section>
-    );
-  }
-}
+
+  return (
+    <section className="menu py-5">
+      <div className="container">
+        <Title
+          title={intl.formatMessage({
+            id: "menu_title",
+            defaultMessage: "Our Menu",
+          })}
+        />
+        <Categories
+          categories={getCategories(items.edges)}
+          handleItems={handleItems}
+        />
+      </div>
+      <MenuItems coffeeItems={coffeeItems} />
+    </section>
+  );
+};
+export default Menu;
