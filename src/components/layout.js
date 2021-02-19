@@ -1,9 +1,9 @@
-import React, { Fragment } from "react"
-import PropTypes from "prop-types"
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
-import './bootstrap.min.css'
-import "./layout.css"
-import Navbar from './globals/Navbar'
+import "./bootstrap.min.css";
+import "./layout.scss";
+import Navbar from "./globals/Navbar";
 import Footer from "./globals/Footer";
 
 const Layout = ({ children }) => (
@@ -12,11 +12,10 @@ const Layout = ({ children }) => (
     {children}
     <Footer />
   </Fragment>
-
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

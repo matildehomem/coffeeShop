@@ -1,16 +1,16 @@
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
     title: `Coffee Project`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Coffee Project to test Gatsby, Contentful, Snipcart`,
+    author: `@mash`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,17 +39,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },
-
     },
     {
-			resolve: 'gatsby-plugin-snipcart',
-			options: {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
         apiKey: process.env.SNIPCART_KEY,
-        autopop: true
-			}
-		}
+        autopop: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

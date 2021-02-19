@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-snipcart": "^1.0.6",
     "gatsby-source-contentful": "^2.3.56",
@@ -21,7 +22,8 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.4.0"
+    "react-icons": "^3.4.0",
+    "sass": "^1.32.8"
   },
   "keywords": [
     "gatsby"

@@ -1,117 +1,123 @@
-:root{
+:root {
   --primaryColor: #2d1e1f;
-  --secondaryColor: #E89A2F;
+  --secondaryColor: #e89a2f;
   --terciaryColor: #ece8dc;
   --darkColor: #222;
   --lightColor: #fff;
 }
 
-body{
+body {
   background: var(--lightColor);
   color: var(--darkColor);
-  font-family: 'Raleway', sans-serif;;
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 1rem;
-
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Raleway', sans-serif;;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
   letter-spacing: 0.2rem !important;
   font-weight: 100;
 }
 
-h5{
+h5 {
   font-weight: 300;
   font-size: 1.5rem !important;
   color: var(--secondaryColor);
 }
-h6{
+h6 {
   font-weight: 300;
   letter-spacing: 0.1 !important;
 }
 
-.text-yellow{
-  color: var(--secondaryColor)
+.text-yellow {
+  color: var(--secondaryColor);
 }
-.text-brown{
+.text-brown {
   color: var(--primaryColor) !important;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #2d1e1f !important;
   font-weight: 600 !important;
-  margin:  0 10px;
+  margin: 0 10px;
 }
-.cart-icon{
+.cart-icon {
   cursor: pointer;
   color: var(--secondaryColor);
   font-size: 2rem;
 }
 
-.default-background, 
-.half-background{
+.default-background,
+.half-background {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(13, 8, 1, 0.72),rgba(105, 65, 5, 0.71)); 
+  background: linear-gradient(rgba(13, 8, 1, 0.72), rgba(105, 65, 5, 0.71));
   background-position: center;
   background-size: cover;
   font-weight: 300;
-
 }
-.half-background{
+.half-background {
   min-height: 60vh;
 }
 
-.btn-yellow{
-  color:var(--secondaryColor);
+.btn-yellow {
+  color: var(--secondaryColor);
   border-color: var(--secondaryColor);
-  background-color: transparent
+  background-color: transparent;
 }
 
-.btn-yellow:hover{
-  background:var(--secondaryColor);
+.btn-yellow:hover {
+  background: var(--secondaryColor);
   color: var(--terciaryColor);
 }
 
-.footer{
-  background-color: var(--primaryColor)
+.footer {
+  background-color: var(--primaryColor);
 }
 
 .menu,
-.contact{
-  background-color: var(--terciaryColor)
+.contact {
+  background-color: var(--terciaryColor);
 }
 
-.icon{
+.icon {
   font-size: 2rem;
   color: var(--secondaryColor);
 }
-hr{
+hr {
   display: block;
-    height: 1px;
-    margin: 3em 0;
-    padding: 0;
-    background-image: -webkit-linear-gradient(left, #fff, #ccc, #fff) !important;
-    width: 50%;
-    left: 25%;
-    position: relative;
-    border: none;
+  height: 1px;
+  margin: 3em 0;
+  padding: 0;
+  background-image: -webkit-linear-gradient(left, #fff, #ccc, #fff) !important;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  border: none;
 }
 
-.cta{
-  background-color: var(--secondaryColor)
+.cta {
+  background-color: var(--secondaryColor);
 }
-.pattern{
+.pattern {
   background: url(../images/div-pattern.png) top left repeat-x;
-    height: 30px;
-    width: 100%;
-    display: block;
+  height: 30px;
+  width: 100%;
+  display: block;
 }
 
-.fix{
+.fix {
   width: 100%;
   margin: 0 !important;
-  
+}
+
+.card .card-img-top {
+  max-height: 200px;
 }
