@@ -1,30 +1,45 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import logo from "../../images/logo.svg";
 import { FaCartArrowDown } from "react-icons/fa";
+import { useIntl, Link } from "gatsby-plugin-intl";
 
-export default function Navbar() {
+const Navbar = () => {
+  const intl = useIntl();
+
   const [navbarOpen, setNavbarOpen] = useState(false);
+
   const links = [
     {
       id: 1,
       path: "/",
-      text: "home",
+      text: `${intl.formatMessage({
+        id: "home",
+        defaultMessage: "Home",
+      })}`,
     },
     {
       id: 2,
       path: "/menu",
-      text: "menu",
+      text: `${intl.formatMessage({
+        id: "menu",
+        defaultMessage: "Menu",
+      })}`,
     },
     {
       id: 3,
       path: "/shop",
-      text: "shop",
+      text: `${intl.formatMessage({
+        id: "shop",
+        defaultMessage: "Shop",
+      })}`,
     },
     {
       id: 4,
       path: "/contacts",
-      text: "contacts",
+      text: `${intl.formatMessage({
+        id: "contacts",
+        defaultMessage: "Contacts",
+      })}`,
     },
   ];
 
@@ -63,4 +78,5 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+export default Navbar;
