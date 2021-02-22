@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../images/logo.svg";
 import { FaCartArrowDown } from "react-icons/fa";
 import { useIntl, Link } from "gatsby-plugin-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const intl = useIntl();
@@ -75,6 +76,7 @@ const Navbar = () => {
             <FaCartArrowDown className="cart-icon snipcart-checkout" />
           </li>
         </ul>
+        <LanguageSwitcher />
       </div>
     </nav>
   );
