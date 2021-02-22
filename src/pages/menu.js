@@ -9,6 +9,9 @@ import Menu from "../components/menu/Menu";
 
 const MenuPage = ({ data }) => {
   const intl = useIntl();
+  let dataMenu;
+  intl.locale === "en" ? (dataMenu = data.menuEN) : (dataMenu = data.menuPT);
+
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -24,7 +27,7 @@ const MenuPage = ({ data }) => {
         })}
         styleClass="half-background"
       />
-      <Menu items={data.menu} />
+      <Menu items={dataMenu} />
     </Layout>
   );
 };
@@ -38,7 +41,25 @@ export const query = graphql`
         }
       }
     }
-    menu: allContentfulCoffeeItem {
+    menuEN: allContentfulCoffeeItem(filter: { node_locale: { eq: "en" } }) {
+      edges {
+        node {
+          id
+          title
+          price
+          category
+          image {
+            fixed(width: 100, height: 100) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
+          description {
+            description
+          }
+        }
+      }
+    }
+    menuPT: allContentfulCoffeeItem(filter: { node_locale: { eq: "pt" } }) {
       edges {
         node {
           id

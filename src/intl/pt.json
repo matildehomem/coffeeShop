@@ -8,6 +8,7 @@
   "go_shop_page": "Loja",
   "info_story": "História sobre o café",
   "menu": "Menu",
+  "menu_title": "O nosso Menu",
   "products_list": "Lista de produtos",
   "reservation_label": "Reservas",
   "subtitle_contacts": "Muito pode acontecer à mesa do café",
@@ -19,5 +20,7 @@
   "title_label": "Coffee Lovers",
   "title_shop": "Loja",
   "home": "Home",
-  "shop": "Loja"
+  "shop": "Loja",
+  "offer_title": "O que oferecemos",
+  "all": "todos"
 }

@@ -16,13 +16,24 @@ const Menu = ({ items }) => {
     });
     let tempCategories = new Set(tempItems); //single instance of categories
     let categories = Array.from(tempCategories);
-    categories = ["all", ...categories]; //add 'all' category
+    categories = [
+      `${intl.formatMessage({
+        id: "all",
+        defaultMessage: "all",
+      })}`,
+      ...categories,
+    ]; //add 'all' category
     return categories;
   };
 
   const handleItems = (category) => {
     let tempItems = [...items.edges];
-    if (category === "all") {
+    if (
+      category ===
+      `${intl.formatMessage({
+        id: "all",
+      })}`
+    ) {
       setCoffeeItems(tempItems);
     } else {
       let items = tempItems.filter(({ node }) => node.category === category);
