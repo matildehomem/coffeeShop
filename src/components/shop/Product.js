@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import { FormattedMessage } from "gatsby-plugin-intl";
 
 export default function Product({ product }) {
   return (
@@ -17,7 +18,7 @@ export default function Product({ product }) {
             data-item-image={product.image.fluid.src}
             data-item-url="http://localhost:8000/" //put the final URL
           >
-            Add to Cart
+            <FormattedMessage id="add_cart" defaultMessage="Add to Cart" />
           </button>
         </div>
       </div>
