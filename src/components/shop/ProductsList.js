@@ -1,7 +1,9 @@
 import React from "react";
+import { useIntl } from "gatsby-plugin-intl";
+import { StaticQuery, graphql } from "gatsby";
+
 import Product from "./Product";
 import Title from "../globals/Title";
-import { StaticQuery, graphql } from "gatsby";
 
 const getProducts = graphql`
   {
@@ -24,6 +26,8 @@ const getProducts = graphql`
 `;
 
 export default function ProductsList() {
+  const intl = useIntl();
+
   return (
     <div>
       <StaticQuery
@@ -32,7 +36,12 @@ export default function ProductsList() {
           return (
             <section className="py-5">
               <div className="container">
-                <Title title="Products List" />
+                <Title
+                  title={intl.formatMessage({
+                    id: "products_list",
+                    defaultMessage: "Products List",
+                  })}
+                />
                 <div className="row">
                   {data.products.edges.map(({ node: product }) => {
                     return <Product key={product.id} product={product} />;

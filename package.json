@@ -9,6 +9,7 @@
     "gatsby": "^2.32.3",
     "gatsby-background-image": "^0.2.3",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-react-helmet": "^3.0.6",
@@ -34,7 +35,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "extract": "formatjs extract"
   },
   "repository": {
     "type": "git",
@@ -48,5 +50,8 @@
   },
   "engines": {
     "node": "10.16.0"
+  },
+  "devDependencies": {
+    "@formatjs/cli": "^3.1.0"
   }
 }

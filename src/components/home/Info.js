@@ -1,25 +1,39 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Title from '../globals/Title';
-
+import React from "react";
+import Title from "../globals/Title";
+import { FormattedMessage, useIntl, Link } from "gatsby-plugin-intl";
 
 export default function Info() {
-    return (
-        <section className="py-5 my-4">
-            <div className="container">
-            <Title title="our story" />
-            <hr/>
-                <div className="row">
-                    <div className="col-10 col-sm-8 mx-auto text-center">
-                        <p className="text-muted mb-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nemo repudiandae obcaecati accusamus, voluptatum laudantium asperiores maiores officia necessitatibus ad minus tempora fugiat odio non rem blanditiis quaerat, possimus esse, voluptate ea quisquam et at aspernatur amet. Itaque voluptate omnis veritatis, est labore hic incidunt quaerat ab, necessitatibus tempore voluptatibus. Suscipit ullam nisi perferendis quidem corrupti. Eaque minima numquam quo aliquid aspernatur velit repudiandae fugiat debitis molestias accusamus. Distinctio, velit!
-                        </p>
-                        <Link to="/about">
-                            <button className="btn btn-yellow">about page</button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  const intl = useIntl();
+
+  return (
+    <section className="py-5 my-4">
+      <div className="container">
+        <Title
+          title={intl.formatMessage({
+            id: "title_info",
+            defaultMessage: "Our story",
+          })}
+        />
+        <hr />
+        <div className="row">
+          <div className="col-10 col-sm-8 mx-auto text-center">
+            <p className="text-muted mb-5">
+              <FormattedMessage
+                id="info_story"
+                defaultMessage="Info story about coffee"
+              />
+            </p>
+            <Link to="/about">
+              <button className="btn btn-yellow">
+                <FormattedMessage
+                  id="go_about_page"
+                  defaultMessage="About Page"
+                />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
