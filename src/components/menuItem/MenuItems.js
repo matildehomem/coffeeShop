@@ -6,7 +6,7 @@ const MenuItems = ({ coffeeItems }) => (
     <div className="col-10 col-sm6 mx-auto text-center text-capitalize">
       {coffeeItems.length ? (
         coffeeItems.map(({ node }) => {
-          return <MenuItem item={node} />;
+          return <MenuItem key={node.id} item={node} />;
         })
       ) : (
         <h5>No items to display</h5>

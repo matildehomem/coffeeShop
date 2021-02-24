@@ -7,7 +7,9 @@ import Title from "../globals/Title";
 
 const getProducts = graphql`
   {
-    products: allContentfulCoffeeProduct {
+    products: allContentfulCoffeeProduct(
+      filter: { node_locale: { eq: "en" } }
+    ) {
       edges {
         node {
           id
