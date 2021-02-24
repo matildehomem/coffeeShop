@@ -37,7 +37,7 @@ export const query = graphql`
     img: file(relativePath: { eq: "header_bg.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -50,7 +50,7 @@ export const query = graphql`
           category
           image {
             fixed(width: 100, height: 100) {
-              ...GatsbyContentfulFixed_tracedSVG
+              ...GatsbyContentfulFixed
             }
           }
           description {
@@ -68,7 +68,7 @@ export const query = graphql`
           category
           image {
             fixed(width: 100, height: 100) {
-              ...GatsbyContentfulFixed_tracedSVG
+              ...GatsbyContentfulFixed
             }
           }
           description {

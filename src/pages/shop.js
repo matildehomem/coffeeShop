@@ -34,7 +34,7 @@ export const query = graphql`
     img: file(relativePath: { eq: "header_bg.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
